@@ -1,6 +1,8 @@
 package org.example.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -11,6 +13,8 @@ public class FormaPagamento  implements Serializable {
     @Column(name = "FPG_ID")
     private Long fpgId;
 
+    @NotBlank(message = "Forma de pagamento é obrigatório")
+    @Size(max = 100, message = "")
     @Column(name = "FPG_DESCRICAO")
     private String fpgDescricao;
 
